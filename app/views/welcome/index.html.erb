@@ -1,4 +1,17 @@
-<h2>Hello World</h2>
+<h2>Twitter for Palindromes</h2>
 <p>
   The time is now: <%= Time.now %>
 </p>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Status</th>
+  </tr>
+<% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= tweet.user_id %></td>
+    <td><%= tweet.status %></td>
+  </tr>
+  <%end%>
+</table>
