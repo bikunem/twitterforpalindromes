@@ -1,0 +1,26 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.tweets.any? %>
+    <h3> Tweets (<%= @user.tweets.count %>)</h3>
+    <table>
+      <tr>
+        <th>Status</th>
+        <th>Created</th>
+      </tr>
+      <% @user.tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.status %></td>
+        <td><%= tweet.created_at %></td>
+      </tr>
+      <% end %>
+    <%end%>
+  </div>
+</div>

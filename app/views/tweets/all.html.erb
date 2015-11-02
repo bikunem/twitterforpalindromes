@@ -1,0 +1,14 @@
+<h2>All Tweets</h2>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Tweet</th>
+  </tr>
+  <% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= tweet.user_id %></td>
+    <td><%= tweet.status %></td>
+  </tr>
+  <%end%>
+</table>

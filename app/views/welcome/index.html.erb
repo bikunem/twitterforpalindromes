@@ -2,16 +2,34 @@
 <p>
   The time is now: <%= Time.now %>
 </p>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/tweet_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+
+<%else%>
+
+<%= link_to "Sign up now!", signup_path, class: "btn, btn-lg, btn-primary" %>
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Status</th>
+    <th>ID</th>
+    <th>Username</th>
   </tr>
-<% Tweet.all.each do |tweet| %>
+<% User.all.each do |user| %>
   <tr>
-    <td><%= tweet.user_id %></td>
-    <td><%= tweet.status %></td>
+    <td><%= user.id %></td>
+    <td><%= user.name %></td>
   </tr>
   <%end%>
 </table>
+
+<%end%>

@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <header class="navbar navber-fixed-top navbar-inverse"
+    <div class="container">
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", '#' %> </li>
+          <li><%= link_to "Login", '#' %> </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

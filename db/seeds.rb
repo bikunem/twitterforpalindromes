@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.find(4)
+
+content = "a man, a plan, a canal, Panama"
+
+user.tweets.create!(status: content)

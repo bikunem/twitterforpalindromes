@@ -1,0 +1,19 @@
+<h1>Log In</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<p>Don't have an account?  <%=link_to "Click here", signup_path %> to share your favorite palindromes today!</p>
+
+<div class="row">
+  <div class="col-md-6" "col-md-offset-3">
+    <%= form_for(:session, url:login_path) do |l| %>
+
+      <%= l.label :name %>
+      <%= l.text_field :name, class: 'form-control' %>
+
+      <%= l.label :password %>
+      <%= l.password_field :password, class: 'form-control' %>
+
+      <%= l.submit "Log in!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

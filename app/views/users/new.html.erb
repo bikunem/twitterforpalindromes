@@ -1,0 +1,22 @@
+<h1>Sign Up</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for(@user) do |u| %>
+      <%= render 'shared/error_messages', object: u.object %>
+
+      <%= u.label :name %>
+      <%= u.text_field :name, class: 'form-control' %>
+
+      <%= u.label :password %>
+      <%= u.password_field :password, class: 'form-control' %>
+
+      <%= u.label :password_confirmation, "Confirmation" %>
+      <%= u.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= u.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+/* I'm not sure if I'm going to use this page */
+
+<h2>Twitter for Palindromes</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+
+<%= link_to "Sign up now!", '#', class: "btn, btn-lg, btn-primary" %>
+
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Status</th>
+  </tr>
+<% User.all.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.name %></td>
+  </tr>
+  <%end%>
+</table>

@@ -1,0 +1,7 @@
+<%= form_for(@tweet) do |t| %>
+<%= render 'shared/error_messages', object: t.object %>
+<div class="field">
+  <%= t.text_area :status, placeholder: "Write your palindrome here..." %>
+</div>
+<%= t.submit "Post", class: "btn btn-primary"%>
+<% end %>
